@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		578F5B8F1EA0196D00CF70B0 /* song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = song.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		578F5B8F1EA0196D00CF70B0 /* Wat Song.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wat Song.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		578F5B921EA0196D00CF70B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		578F5B961EA0196D00CF70B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		578F5B9B1EA0196D00CF70B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		578F5B901EA0196D00CF70B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				578F5B8F1EA0196D00CF70B0 /* song.app */,
+				578F5B8F1EA0196D00CF70B0 /* Wat Song.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 			);
 			name = song;
 			productName = song;
-			productReference = 578F5B8F1EA0196D00CF70B0 /* song.app */;
+			productReference = 578F5B8F1EA0196D00CF70B0 /* Wat Song.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -236,7 +236,7 @@
 				INFOPLIST_FILE = song/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Knife.song;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Wat Song";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -249,7 +249,7 @@
 				INFOPLIST_FILE = song/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Knife.song;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Wat Song";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -273,6 +273,7 @@
 				578F5BA01EA0196D00CF70B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
