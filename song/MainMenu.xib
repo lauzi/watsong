@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="t5z-jA-2qQ" id="Zvt-rm-rhd"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="t5z-jA-2qQ" customClass="AppDelegate" customModule="song" customModuleProvider="target">
+            <connections>
+                <outlet property="statusMenu" destination="45W-3o-GDw" id="TgU-XY-4gj"/>
+            </connections>
+        </customObject>
+        <menu id="45W-3o-GDw">
+            <items>
+                <menuItem title="Fak Off" id="3sq-qU-gzi">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="t5z-jA-2qQ" id="VrX-YA-qdx"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="16.5" y="148.5"/>
+        </menu>
+    </objects>
+</document>
