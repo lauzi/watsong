@@ -12,7 +12,8 @@ import ScriptingBridge
 
 // http://stackoverflow.com/questions/37285616/get-audio-metadata-from-current-playing-audio-in-itunes-on-os-x
 @objc protocol iTunesApplication {
-    @objc optional func currentTrack()-> AnyObject
+    @objc optional func currentTrack() -> AnyObject
+    @objc optional func nextTrack()
     @objc optional var properties: NSDictionary { get }
 }
 
@@ -52,6 +53,12 @@ class TrackInfoController: NSObject {
         let album = trackDict["album"]! as! String
         
         delegate.updateTrackInfo(Song(title: title, artist: artist, album: album))
+    }
+    
+    func nextSong() {
+        if iTunes.isRunning {
+            iTunes.nextTrack?()
+        }
     }
     
     func notified(notification: NSNotification?) {
@@ -96,19 +103,41 @@ class AppDelegate: NSObject, NSApplicationDelegate, TrackInfoDelegate {
     let trackInfoController = TrackInfoController()
     func updateTrackInfo(_ song: Song?) {
         guard let song = song else {
-            statusItem.title = defaultTitle
+            statusItem.button?.title = defaultTitle
             return
         }
         
-        statusItem.title = "\(song.artist) — \(song.title)"
+        statusItem.button?.title = "\(song.artist) — \(song.title)"
     }
     
     func getCurrentStatus() {
     }
 
+    func onClick(_ sender: Any) {
+        if let event = NSApp.currentEvent,
+           event.modifierFlags.contains(.control) ||
+           event.modifierFlags.contains(.option) ||
+           event.type == .rightMouseUp {
+            
+            statusItem.menu = statusMenu
+            // popUpMenu is depricated but I don't know a better way.
+            // The line belows shows a typical right-click menu, which is NOT what we want.
+            // NSMenu.popUpContextMenu(statusMenu, with: event, for: statusMenu)
+            statusItem.popUpMenu(statusMenu)
+            // 
+            statusItem.menu = nil
+        } else {
+            trackInfoController.nextSong()
+        }
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        statusItem.title = defaultTitle
-        statusItem.menu = statusMenu
+        // statusItem.menu = statusMenu
+        let button = statusItem.button!
+        button.title = defaultTitle
+        button.target = self
+        button.action = #selector(onClick(_:))
+        button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         
         trackInfoController.delegate = self
         trackInfoController.checkSong()

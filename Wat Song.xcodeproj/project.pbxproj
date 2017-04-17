@@ -61,9 +61,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		578F5B8E1EA0196D00CF70B0 /* song */ = {
+		578F5B8E1EA0196D00CF70B0 /* Wat Song */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 578F5B9E1EA0196D00CF70B0 /* Build configuration list for PBXNativeTarget "song" */;
+			buildConfigurationList = 578F5B9E1EA0196D00CF70B0 /* Build configuration list for PBXNativeTarget "Wat Song" */;
 			buildPhases = (
 				578F5B8B1EA0196D00CF70B0 /* Sources */,
 				578F5B8C1EA0196D00CF70B0 /* Frameworks */,
@@ -73,7 +73,7 @@
 			);
 			dependencies = (
 			);
-			name = song;
+			name = "Wat Song";
 			productName = song;
 			productReference = 578F5B8F1EA0196D00CF70B0 /* Wat Song.app */;
 			productType = "com.apple.product-type.application";
@@ -94,7 +94,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 578F5B8A1EA0196D00CF70B0 /* Build configuration list for PBXProject "song" */;
+			buildConfigurationList = 578F5B8A1EA0196D00CF70B0 /* Build configuration list for PBXProject "Wat Song" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -107,7 +107,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				578F5B8E1EA0196D00CF70B0 /* song */,
+				578F5B8E1EA0196D00CF70B0 /* Wat Song */,
 			);
 		};
 /* End PBXProject section */
@@ -257,7 +257,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		578F5B8A1EA0196D00CF70B0 /* Build configuration list for PBXProject "song" */ = {
+		578F5B8A1EA0196D00CF70B0 /* Build configuration list for PBXProject "Wat Song" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				578F5B9C1EA0196D00CF70B0 /* Debug */,
@@ -266,7 +266,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		578F5B9E1EA0196D00CF70B0 /* Build configuration list for PBXNativeTarget "song" */ = {
+		578F5B9E1EA0196D00CF70B0 /* Build configuration list for PBXNativeTarget "Wat Song" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				578F5B9F1EA0196D00CF70B0 /* Debug */,
