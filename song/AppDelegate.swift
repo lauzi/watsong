@@ -61,7 +61,7 @@ class TrackInfoController: NSObject {
         }
     }
     
-    func notified(notification: NSNotification?) {
+    @objc func notified(notification: NSNotification?) {
         // some things are numbers so we can't convert the whole dictionary to strings
         guard let info = notification?.userInfo as! Dictionary<String, Any>? else {
             delegate.updateTrackInfo(nil)
@@ -92,10 +92,10 @@ class TrackInfoController: NSObject {
 class AppDelegate: NSObject, NSApplicationDelegate, TrackInfoDelegate {
 
     @IBOutlet weak var statusMenu: NSMenu!
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSVariableStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared().terminate(self)
+        NSApplication.shared.terminate(self)
     }
     
     let defaultTitle = "Wat Singu?"
