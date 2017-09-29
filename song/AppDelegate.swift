@@ -13,6 +13,7 @@ import ScriptingBridge
 // http://stackoverflow.com/questions/37285616/get-audio-metadata-from-current-playing-audio-in-itunes-on-os-x
 @objc protocol iTunesApplication {
     @objc optional func currentTrack() -> AnyObject
+    @objc optional func previousTrack()
     @objc optional func nextTrack()
     @objc optional var properties: NSDictionary { get }
 }
@@ -53,6 +54,12 @@ class TrackInfoController: NSObject {
         let album = trackDict["album"]! as! String
         
         delegate.updateTrackInfo(Song(title: title, artist: artist, album: album))
+    }
+    
+    func lastSong() {
+        if iTunes.isRunning {
+            iTunes.previousTrack?()
+        }
     }
     
     func nextSong() {
@@ -113,10 +120,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, TrackInfoDelegate {
     func getCurrentStatus() {
     }
 
-    func onClick(_ sender: Any) {
-        if let event = NSApp.currentEvent,
-           event.modifierFlags.contains(.control) ||
-           event.modifierFlags.contains(.option) ||
+    @objc func onClick(_ sender: Any) {
+        guard let event = NSApp.currentEvent else {
+            return
+        }
+        
+        if event.modifierFlags.contains(.control) ||
            event.type == .rightMouseUp {
             
             statusItem.menu = statusMenu
@@ -126,6 +135,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, TrackInfoDelegate {
             statusItem.popUpMenu(statusMenu)
             // 
             statusItem.menu = nil
+        } else if event.modifierFlags.contains(.option) {
+            trackInfoController.lastSong()
         } else {
             trackInfoController.nextSong()
         }
